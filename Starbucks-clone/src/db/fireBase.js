@@ -1,7 +1,9 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
+import { products } from "../api/products.js";
+import { dataCollection } from "../api/collection.js"
+import { getAuth } from "firebase/auth";
 import { collection, getDocs, getFirestore, addDoc } from "firebase/firestore"
-import { dataCollection } from "../db/collection.js"
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -19,15 +21,62 @@ const firebaseConfig = {
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
-const db = getFirestore(app)
+export const db = getFirestore(app)
+export const auth = getAuth(app)
 
+/*-------------
+-- U S E R S --
+-------------*/
+
+export async function getUsers() {
+  try {
+    const dataBaseCollection = await getDocs(collection(db, "users"))
+    const users = dataBaseCollection.docs.map(doc => ({
+      id:doc.id,
+      ...doc.data
+    }))
+    return users
+  } catch (error) {
+    console.log(error)
+  }
+}
+
+/*-------------------
+-- P R O D U C T S --
+-------------------*/
+
+export async function setProducts() {
+  try {
+    const productArray = products()
+    const dataBaseCollection = collection(db, "products")
+    const promises = productArray.map(async (p) => (
+      addDoc(dataBaseCollection, p)
+    ))
+    await Promise.all(promises)
+  } catch (error) {
+    console.log(error)
+  }
+}
+
+export const getProducts = async () => {
+    const querySnapshot = await getDocs(collection(db, "products"));
+    const docs = querySnapshot.docs.map(doc => ({
+      id:doc.id,
+      ...doc.data()
+    }))
+  return docs
+}
+
+/*-----------------------
+-- C A T E G O R I E S --
+-----------------------*/
 
 export async function setCategories() {
   try {
-    const dataArray = dataCollection()
-    const categoriesCollection = collection(db, "categories")
-    const promises = dataArray.map(async (cat) => {
-      return addDoc(categoriesCollection, cat);
+    const categoriesArray = dataCollection()
+    const dataBaseCollection = collection(db, "categories")
+    const promises = categoriesArray.map(async (cat) => {
+      return addDoc(dataBaseCollection, cat);
     })
     await Promise.all(promises)
   } catch (error) {

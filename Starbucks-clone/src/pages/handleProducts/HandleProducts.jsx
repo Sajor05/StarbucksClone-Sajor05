@@ -1,6 +1,6 @@
 import { setCategories } from "../../db/fireBase"
-import { Navbar } from "../../components/extends/navbar/Navbar"
-import { Footer } from "../../components/extends/footer/Footer"
+import { Navbar } from "../../components/navbar/Navbar"
+import { Footer } from "../../components/footer/Footer"
 
 export const HandleProducts = () => {
   return (

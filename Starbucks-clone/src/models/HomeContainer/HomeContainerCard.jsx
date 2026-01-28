@@ -9,7 +9,7 @@ export const HomeContainerCard = ({image, text, textcolor, backgroundcolor, isRe
             <section className="homeContainer-text" style={{backgroundColor:`${backgroundcolor}`}}>
                 <div className='text-container w-108.25 h-38.75 m-30'>
                     <h1 className={'text-[48px] font-bold'} style={{color:`${textcolor}`}}>{text}</h1>
-                    {isReversed ? <span className={`mt-4`} style={isReversed ? {color:`${textcolor}`}:{}}>Revisa las oportunidades que tenemos para vos</span> : ""}
+                    {isReversed ? <span className={`mt-4 text-[19px] font-semibold`} style={isReversed ? {color:`${textcolor}`}:{}}>Revisa las oportunidades que tenemos para vos</span> : ""}
                     {isReversed ? <a href="https://app.genoma.work/jobs/sbx-ar" className={`submit-button mt-4`} style={isReversed ? {color:`${textcolor}`}:{}}>Postular acá</a> : ""}
                 </div>
             </section>

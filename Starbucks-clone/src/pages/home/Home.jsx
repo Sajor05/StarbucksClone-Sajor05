@@ -1,5 +1,5 @@
-import { Navbar } from "../../components/extends/navbar/Navbar"
-import { Footer } from "../../components/extends/footer/Footer"
+import { Navbar } from "../../components/navbar/Navbar"
+import { Footer } from "../../components/footer/Footer"
 import { HomeContainerCard } from "../../models/HomeContainer/HomeContainerCard"
 
 export const Home = () => {
@@ -9,10 +9,10 @@ export const Home = () => {
       <main className="h-266">
         <div className="flex justify-center">
           <HomeContainerCard
-            image = "https://djftrby1k8irl.cloudfront.net/s3fs-public/2025-12%2FBanner%20Red%20Velvet.png?auto=format,compress&q=70&crop=focalpoint&ar=1.8:1.0&w=1400&fit=max"
-            text = "¡Ho - Ho - Hola Red Velvet!"
+            image = "https://djftrby1k8irl.cloudfront.net/s3fs-public/2026-01%2Fbanner%202%20(1).png?auto=format,compress&q=70&crop=focalpoint&ar=1.8:1.0&w=1400&fit=max"
+            text = "¡Pistacho regresa a Starbucks!"
             textcolor = "#fff"
-            backgroundcolor="#dc3545"
+            backgroundcolor="#00754a"
           />
         </div>
         <div className="mt-15 flex justify-center">

@@ -1,0 +1,20 @@
+.navbar{
+    box-shadow: 0 3px 3px rgba(0, 0, 0, .1);
+    align-items: center;
+}
+
+.menu-item:hover{
+    color: #00754a;
+    position: relative;
+}
+
+.menu-item:hover:before{
+    bottom: -33px;
+    background: #00754a;
+    content: "";
+    height: 5px;
+    display: block;
+    position: absolute;
+    width: 100%;
+
+}
