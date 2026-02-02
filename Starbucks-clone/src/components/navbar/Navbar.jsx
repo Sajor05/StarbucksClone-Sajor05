@@ -1,59 +1,125 @@
-import "./Navbar.css"
-import { NavLink } from "react-router-dom"
-import { Dropdown } from "../dropdown/Dropdown"
+import { useState } from "react";
+import "./Navbar.css";
+import { NavLink } from "react-router-dom";
+import { Dropdown } from "../dropdown/Dropdown";
 import { FaMapMarkerAlt } from "react-icons/fa";
-import { CartModal } from "../../client/cart/CartModal"
-import { useAuth } from "../../context/AuthContext"
+import { HiMenuAlt3, HiX } from "react-icons/hi";
+import { CartModal } from "../../client/cart/CartModal";
+import { useAuth } from "../../context/AuthContext";
 
 export const Navbar = () => {
-    const{isAuthenticated} = useAuth()
-    return(
-        <nav className="navbar flex gap-10 p-4">
-            <div className="flex flex-row ml-85 gap-5">
-                <Logo/>
-                <div className="flex gap-145 p-5">
-                    <NavLinkPage/>
-                    <div className="nav-locate-container flex flex-row w-80 gap-5">
-                        <NavLink className="font-semibold flex hover:opacity-[.8]">
-                            <FaMapMarkerAlt
-                                className="mt-0.5 mr-0.5"
-                                size={18}
-                            />
-                            Localizar Tienda
-                        </NavLink>
-                        {isAuthenticated
-                         ? <div className="flex flex-row gap-5">
-                            <Dropdown/>
-                            <CartModal/>
-                           </div>
-                         : <NavLink to="/iniciar-sesion" className="font-semibold hover:opacity-[.8]">Iniciar sesión</NavLink>}
-                    </div>       
-                </div>                
+  const { isAuthenticated } = useAuth();
+  const [isOpen, setIsOpen] = useState(false);
+
+  return (
+    <nav className="bg-white border-b border-gray-200 sticky top-0 z-50">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12">
+        <div className="flex justify-between items-center h-20">
+          <div className="flex items-center gap-8">
+            <Logo />
+            <div className="hidden lg:flex">
+              <NavLinkPage />
             </div>
-        </nav>
-    )
-}
+          </div>
 
-const NavLinkPage = () => {
-    return(
-        <div className="nav-links flex gap-13 w-100 text-[16px]">
-            <NavLink to="/menu" className="menu-item hover:text-[#00754a]"><span className="uppercase font-bold">Menú</span></NavLink>
-            <NavLink to="/articulo/lets-talk-coffee" className="menu-item hover:text-[#00754a]"><span className="uppercase font-bold">Café</span></NavLink>
-            <NavLink to="/seccion/experiencia-starbucks" className="menu-item hover:text-[#00754a]"><span className="uppercase font-bold">Experiencia Starbucks</span></NavLink>
-        </div>
-    )
-}
-
-const Logo = () => {
-    return(
-        <div className="navbar-brand-container mt-1">
-            <NavLink to="/" className="navbar-brand">
-                <img 
-                    src="https://www.starbucks.com.ar/static/images/logo.svg" 
-                    alt="Starbucks logo"
-                    className="w-13 h-13"
-                />
+          <div className="hidden lg:flex items-center gap-6">
+            <NavLink className="font-semibold flex items-center hover:opacity-[.8]">
+              <FaMapMarkerAlt className="mr-2" size={18} />
+              Localizar Tienda
             </NavLink>
+
+            {isAuthenticated ? (
+              <div className="flex items-center gap-4">
+                <Dropdown />
+                <CartModal />
+              </div>
+            ) : (
+              <NavLink
+                to="/iniciar-sesion"
+                className="font-semibold hover:opacity-[.8]"
+              >
+                Iniciar sesión
+              </NavLink>
+            )}
+          </div>
+
+          <div className="lg:hidden flex items-center gap-4">
+            {isAuthenticated && <CartModal />}
+            <button
+              onClick={() => setIsOpen(!isOpen)}
+              className="text-gray-600 hover:text-black focus:outline-none"
+            >
+              {isOpen ? <HiX size={30} /> : <HiMenuAlt3 size={30} />}
+            </button>
+          </div>
         </div>
-    )
-}
+      </div>
+
+      <div
+        className={`lg:hidden ${isOpen ? "block" : "hidden"} bg-white border-t border-gray-100`}
+      >
+        <div className="px-4 pt-4 pb-6 space-y-4 shadow-xl">
+          <NavLinkPage mobile onClick={() => setIsOpen(false)} />
+          <hr className="border-gray-100" />
+          <div className="flex flex-col gap-4">
+            <NavLink className="font-semibold flex items-center py-2">
+              <FaMapMarkerAlt className="mr-2" size={18} />
+              <span>Localizar Tienda</span>
+            </NavLink>
+            {!isAuthenticated && (
+              <NavLink
+                to="/iniciar-sesion"
+                className="login-button bg-[#1e3932] text-white text-center font-bold"
+              >
+                Iniciar sesión
+              </NavLink>
+            )}
+            {isAuthenticated && (
+              <div className="flex justify-start">
+                <Dropdown />
+              </div>
+            )}
+          </div>
+        </div>
+      </div>
+    </nav>
+  );
+};
+
+const NavLinkPage = ({ mobile, onClick }) => {
+  const baseStyles =
+    "menu-item uppercase font-bold tracking-widest text-sm hover:text-[#00754a] transition-colors";
+  const layoutStyles = mobile ? "flex flex-col gap-5 py-4" : "flex gap-8";
+
+  return (
+    <div className={layoutStyles}>
+      <NavLink onClick={onClick} to="/menu" className={baseStyles}>
+        Menú
+      </NavLink>
+      <NavLink
+        onClick={onClick}
+        to="/articulo/lets-talk-coffee"
+        className={baseStyles}
+      >
+        Café
+      </NavLink>
+      <NavLink
+        onClick={onClick}
+        to="/seccion/experiencia-starbucks"
+        className={baseStyles}
+      >
+        Experiencia Starbucks
+      </NavLink>
+    </div>
+  );
+};
+
+const Logo = () => (
+  <NavLink to="/" className="shrink-0">
+    <img
+      src="https://www.starbucks.com.ar/static/images/logo.svg"
+      alt="Starbucks logo"
+      className="w-12 h-12 md:w-14 md:h-14"
+    />
+  </NavLink>
+);

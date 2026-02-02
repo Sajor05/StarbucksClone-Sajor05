@@ -2,8 +2,10 @@ import "./Coffee.css"
 import { Title } from "../../models/Title"
 import { Footer } from "../../components/footer/Footer"
 import { Navbar } from "../../components/navbar/Navbar"
+import { usePageTitle } from "../../hooks/PageTilteHook"
 
 export const Coffee = () => {
+  usePageTitle("Let´s talk coffee")
   return (
     <>
         <Navbar/>
