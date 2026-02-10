@@ -20,6 +20,13 @@ export interface PurchaseHistory {
   total: number;
 }
 
+export interface Article {
+  image?: string;
+  title: string;
+  date: string;
+  link?: string;
+}
+
 export interface AuthContextType {
   user: User | null;
   isAuthenticated: boolean;
@@ -120,4 +127,8 @@ export interface UserUpdateRequestProps {
 
 export interface CartProviderProps {
   children: ReactNode;
+}
+
+export interface BuyButtonProp {
+  item: Product;
 }

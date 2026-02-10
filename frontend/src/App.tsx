@@ -12,6 +12,7 @@ import { LoginForm } from "./components/auth/login/LoginForm";
 import { RegisterForm } from "./components/auth/register/RegisterForm";
 import { ExperienceStarBucks } from "./pages/experience/ExperienceStarBucks";
 import { ProductDetailCard } from "./models/productDetailCard/ProductDetailCard";
+import { OurHistory } from "./pages/history/OurHistory";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/menu" element={<MenuListContainer />} />
+          <Route path="/seccion/nuestra-historia" element={<OurHistory />} />
           <Route path="/perfil/:username" element={<Profile />} />
           <Route path="/articulo/contacto" element={<Contact />} />
           <Route path="/registrarse" element={<RegisterForm />} />

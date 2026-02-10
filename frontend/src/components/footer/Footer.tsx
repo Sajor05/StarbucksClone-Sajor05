@@ -40,7 +40,7 @@ const AboutUs = () => {
     <div className="flex flex-col gap-9 font-semibold">
       <header>Sobre nosotros</header>
       <div className="flex flex-col gap-5 text-gray-400">
-        <Link to={""}>
+        <Link to={"/seccion/nuestra-historia"}>
           <span className="hover:text-black">Nuestra historia</span>
         </Link>
         <Link to={""}>

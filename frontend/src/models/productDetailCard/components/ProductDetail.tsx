@@ -2,11 +2,14 @@ import "./ProductDetail.css";
 import { useCart } from "../../../context/CartContext";
 import { Navbar } from "../../../components/navbar/Navbar";
 import { Footer } from "../../../components/footer/Footer";
-import type { ProductDetailProp } from "../../../interface/Interface";
+import { Link } from "react-router-dom";
+import type {
+  BuyButtonProp,
+  ProductDetailProp,
+} from "../../../interface/Interface";
+import { useAuth } from "../../../context/AuthContext";
 
 export const ProductDetail = ({ item }: ProductDetailProp) => {
-  const { handleAddItem } = useCart();
-
   if (!item) {
     return <NoProduct />;
   }
@@ -25,16 +28,29 @@ export const ProductDetail = ({ item }: ProductDetailProp) => {
         </div>
       </div>
       <div className="text-center mt-8">
-        <button
-          className="bg-[#1e3932] p-1.5 rounded-full cursor-pointer"
-          onClick={() => handleAddItem(item)}
-        >
-          <span className="text-[16px] text-white font-bold">
-            + ${item.price}
-          </span>
-        </button>
+        <BuyButton item={item} />
       </div>
     </main>
+  );
+};
+
+const BuyButton = ({ item }: BuyButtonProp) => {
+  const { handleAddItem } = useCart();
+  const { isAuthenticated } = useAuth();
+  return isAuthenticated ? (
+    <button
+      className="bg-[#1e3932] p-1.5 rounded-full cursor-pointer"
+      onClick={() => handleAddItem(item)}
+    >
+      <span className="text-[16px] text-white font-bold">+ ${item.price}</span>
+    </button>
+  ) : (
+    <Link
+      to={"/iniciar-sesion"}
+      className="bg-[#1e3932] p-1.5 rounded-full cursor-pointer"
+    >
+      <span className="text-[16px] text-white font-bold">+ ${item.price}</span>
+    </Link>
   );
 };
 

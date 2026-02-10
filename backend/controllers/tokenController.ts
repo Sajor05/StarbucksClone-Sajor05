@@ -14,7 +14,7 @@ export async function verifyToken(req: Request, res: Response) {
     const tokenVerify = jwt.verify(token, SECRET_KEY) as IPayload;
     const userFound = await User.findById(tokenVerify.id);
     if (!userFound) {
-      return res.status(401).json({ message: "Unauthorized: user not found" });
+      return res.status(401).json({ message: "Usuario no encontrado" });
     }
     return res.json({
       id: userFound._id,
@@ -25,6 +25,6 @@ export async function verifyToken(req: Request, res: Response) {
       purchaseHistory: userFound.purchaseHistory,
     });
   } catch (error) {
-    return res.status(401).json({ message: "Unauthorized: Invalid token" });
+    return res.status(401).json({ message: "Token invalido" });
   }
 }
