@@ -39,7 +39,7 @@ Para facilitar la navegación del código, el proyecto está organizado de la si
 
 **Fabrizio Rojas**
 * **GitHub:** [@Sajor05](https://github.com/Sajor05)
-* **LinkedIn:** [@Sajor05]((https://www.linkedin.com/in/fabrizio-alexander-rojas-4a8051381/))
+* **LinkedIn:** [Fabrizio Alexander Rojas](https://www.linkedin.com/in/fabrizio-alexander-rojas-4a8051381/)
 
 ---
 *Nota: Este proyecto fue desarrollado con fines educativos como un clon funcional de la plataforma de Starbucks.*
