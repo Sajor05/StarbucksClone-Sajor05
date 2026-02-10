@@ -1,8 +1,5 @@
 import { Router } from "express";
-import {
-  getProducts,
-  categoriesController,
-} from "../controllers/jsonController.js";
+import { getProducts, getCategories } from "../controllers/jsonController.js";
 import { userController } from "../controllers/userController.js";
 import { logout } from "../controllers/logout.js";
 import { login } from "../controllers/loginController.js";
@@ -16,6 +13,6 @@ router.post("/logout", logout);
 router.post("/register", register);
 router.get("/verify", verifyToken);
 router.get("/products", getProducts);
-router.get("/categories", categoriesController);
+router.get("/categories", getCategories);
 
 export default router;

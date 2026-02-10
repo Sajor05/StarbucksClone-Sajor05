@@ -1,9 +1,6 @@
-import path from "node:path";
-import fs from "node:fs/promises";
-import { cwd } from "node:process";
 import Product from "../models/product_model.js";
 import type { Request, Response } from "express";
-
+import Categories from "../models/category_model.js";
 /*-------------------
 -- P R O D U C T S --
 -------------------*/
@@ -23,14 +20,12 @@ export async function getProducts(req: Request, res: Response) {
 -- C A T E G O R I E S --
 -----------------------*/
 
-export async function categoriesController(req: Request, res: Response) {
+export async function getCategories(req: Request, res: Response) {
   try {
-    const absolutePath = path.join(cwd(), "mocks", "categories.json");
-    const allProducts = await fs.readFile(absolutePath, "utf-8");
-    const data = JSON.parse(allProducts);
-    res.status(200).json(data);
+    const allCategories = await Categories.find();
+    res.status(200).json(allCategories);
   } catch (error) {
     console.error(error);
-    res.status(500).json({ error: "Error al obtener los productos" });
+    res.status(500).json({ error: "Error al obtener las categorias" });
   }
 }

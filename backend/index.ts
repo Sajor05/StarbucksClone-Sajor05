@@ -1,5 +1,4 @@
 import cors from "cors";
-import path from "path";
 import morgan from "morgan";
 import express from "express";
 import { connection } from "./db/db.js";
@@ -12,7 +11,7 @@ app.use(
   cors({
     origin: [
       "http://localhost:5173",
-      "https://starbucksclone-snowy.vercel.app/",
+      "https://starbucksclone-snowy.vercel.app",
     ],
     methods: ["GET", "POST", "PUT"],
     credentials: true,
