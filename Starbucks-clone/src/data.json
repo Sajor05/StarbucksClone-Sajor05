@@ -1,0 +1,63 @@
+[
+    {
+        "mainCategory":"Bebidas",
+        "categories":[
+            {
+                "Heladas":{
+                    "categories":[
+                        {
+                            "mainCategory":"Refreshers",
+                            "products":[
+                                {
+                                    "title":"Mango DragonFruit Limonada",
+                                    "image":"https://djftrby1k8irl.cloudfront.net/s3fs-public/2022-03%2FMango%20Dragonfruit%20sin%20fondo.png?auto=format,compress&q=70&crop=focalpoint&ar=1:1.0&w=180&fit=crop"
+                                },
+                                {
+                                    "title":"Dragon Drink",
+                                    "image":"https://djftrby1k8irl.cloudfront.net/s3fs-public/2022-03%2FDragon%20Drink%20425x425%20sin%20fondo.png?auto=format,compress&q=70&crop=focalpoint&ar=1:1.0&w=180&fit=crop"
+                                }
+                            ]
+                        },
+                        {
+                            "mainCategory":"Jugos, aguas y bebidas saborizadas",
+                            "products":[
+                                {
+                                    "title":"Jugo de manzana",
+                                    "image":"https://djftrby1k8irl.cloudfront.net/s3fs-public/2022-03%2FIced%20Green%20Lemon%20Tea%20425x425%20sin%20fondo.png?auto=format,compress&q=70&crop=focalpoint&ar=1:1.0&w=180&fit=crop"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            },
+            {
+                "Bebidas":{
+                    "categories":[
+                        {
+                            "mainCategory":"Refreshers",
+                            "products":[
+                                {
+                                    "title":"Mango DragonFruit Limonada",
+                                    "image":"https://djftrby1k8irl.cloudfront.net/s3fs-public/2022-03%2FMango%20Dragonfruit%20sin%20fondo.png?auto=format,compress&q=70&crop=focalpoint&ar=1:1.0&w=180&fit=crop"
+                                },
+                                {
+                                    "title":"Dragon Drink",
+                                    "image":"https://djftrby1k8irl.cloudfront.net/s3fs-public/2022-03%2FDragon%20Drink%20425x425%20sin%20fondo.png?auto=format,compress&q=70&crop=focalpoint&ar=1:1.0&w=180&fit=crop"
+                                }
+                            ]
+                        },
+                        {
+                            "mainCategory":"Jugos, aguas y bebidas saborizadas",
+                            "products":[
+                                {
+                                    "title":"Jugo de manzana",
+                                    "image":"https://djftrby1k8irl.cloudfront.net/s3fs-public/2022-03%2FIced%20Green%20Lemon%20Tea%20425x425%20sin%20fondo.png?auto=format,compress&q=70&crop=focalpoint&ar=1:1.0&w=180&fit=crop"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            }
+        ]
+    }
+]
