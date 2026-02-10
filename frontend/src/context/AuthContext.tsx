@@ -1,4 +1,4 @@
-import Cookies from "js-cookie";
+import axios from "axios";
 import { createContext, useState, useContext, useEffect } from "react";
 import {
   registerRequest,
@@ -46,10 +46,25 @@ export const AuthProvider: React.FC<React.PropsWithChildren> = ({
     }
   };
 
-  const logout = () => {
-    Cookies.remove("token");
-    setIsAuthenticated(false);
-    setUser(null);
+  const logout = async () => {
+    try {
+      await axios.post(
+        "http://localhost:4000/api/logout",
+        {},
+        { withCredentials: true },
+      );
+
+      Object.keys(localStorage).forEach((key) => {
+        if (key.startsWith("userData_")) {
+          localStorage.removeItem(key);
+        }
+      });
+
+      setUser(null);
+      setIsAuthenticated(false);
+    } catch (error) {
+      console.error("Error al cerrar sesión en el servidor:", error);
+    }
   };
 
   const updateUserLocal = (updatedUser: User) => {

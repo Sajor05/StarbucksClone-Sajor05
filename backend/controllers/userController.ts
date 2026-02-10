@@ -9,7 +9,6 @@ export async function userController(req: Request, res: Response) {
         {cart:cart, purchaseHistory:purchaseHistory},
         {new:true}
     );
-    console.log("n\n\n\UpdatedUser: ", updatedUser)
     if (!updatedUser) return res.status(404).json({ message: "Usuario no encontrado" });
     return res.json(updatedUser);
   

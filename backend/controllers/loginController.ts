@@ -27,6 +27,8 @@ export async function login(req: Request, res: Response) {
       email: userFound.email,
       address: userFound.address,
       username: userFound.username,
+      cart: userFound.cart,
+      purchaseHistory: userFound.purchaseHistory,
     });
   } catch (error) {
     if (error instanceof Error) {

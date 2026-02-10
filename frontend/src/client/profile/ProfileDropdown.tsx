@@ -22,15 +22,7 @@ export function ProfileDropdown() {
     };
   }, []);
 
-  if (!user) {
-    return (
-      <div className="flex justify-center items-center">
-        <span className="text-[29px] font-semibold text-red-600">
-          Usuario no encontrado
-        </span>
-      </div>
-    );
-  }
+  if (!user) return <NoUserFound />;
 
   return (
     <div ref={modalRef} className="relative inline-block text-left">
@@ -76,3 +68,13 @@ export function ProfileDropdown() {
     </div>
   );
 }
+
+export const NoUserFound = () => {
+  return (
+    <div className="flex justify-center items-center">
+      <span className="text-[29px] font-semibold text-red-600">
+        Usuario no encontrado
+      </span>
+    </div>
+  );
+};

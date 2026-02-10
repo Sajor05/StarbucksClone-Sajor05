@@ -37,7 +37,9 @@ export function LoginForm() {
 
   const onSubmit = handleSubmit(async (values: User) => {
     await signin(values);
-    navigate("/");
+    if (isAuthenticated) {
+      navigate("/");
+    }
   });
 
   return (

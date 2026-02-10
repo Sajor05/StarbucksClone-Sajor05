@@ -7,10 +7,9 @@ export const register = async (req: Request, res: Response) => {
   const { email, address, username, password } = req.body;
   try {
     const userFound = await User.findOne({ email });
-    if (userFound)
-      return res
-        .status(400)
-        .json({ message: "Ya existe una cuenta con este e-mail" });
+    if (userFound) return res.status(400).json({ message: "Ya existe una cuenta con este e-mail" });
+    if(!address || !username || !password || !email) return res.status(400).json({message: "Ingresa todos los datos"})
+    if(password.length < 6) return res.status(400).json({message:"La contraseña debe contar con al menos 6 caracteres"})
 
     //Hasheamos la contraseña
     const hashPassword = await bcrypt.hash(password, 10);
@@ -24,6 +23,7 @@ export const register = async (req: Request, res: Response) => {
       cart: [],
       purchaseHistory: [],
     });
+        
     //Guardamos el nuevo usuario
     const userSaved = await newUser.save();
     const token = await createAccessToken({ id: userSaved._id.toString() });
@@ -32,7 +32,7 @@ export const register = async (req: Request, res: Response) => {
       secure: false,
       sameSite: "lax",
     });
-    /*-----------------------------------
+        /*-----------------------------------
         --  Vemos el resultado por consola --
         -----------------------------------*/
 

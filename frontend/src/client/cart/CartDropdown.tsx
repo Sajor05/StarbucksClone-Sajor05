@@ -3,6 +3,8 @@ import { Link } from "react-router-dom";
 import { AiOutlineProduct } from "react-icons/ai";
 import { useCart } from "../../context/CartContext";
 import { useEffect, useState, useRef } from "react";
+import { useAuth } from "../../context/AuthContext";
+import { NoUserFound } from "../profile/ProfileDropdown";
 
 export function CartModal() {
   const [isOpen, setIsOpen] = useState(false);
@@ -75,12 +77,14 @@ export function CartModal() {
 }
 
 const GoBuyButton = () => {
+  const { user } = useAuth();
+  if (!user) return <NoUserFound />;
   return (
     <>
       <hr className="text-gray-300" />
       <div className="flex justify-center mt-3">
         <Link
-          to={"/perfil/:username"}
+          to={`/perfil/${user.username}`}
           className="bg-[#1e3932] text-center p-2 rounded-full cursor-pointer"
         >
           <span className="text-white font-bold">Comprar</span>

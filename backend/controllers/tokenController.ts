@@ -21,6 +21,8 @@ export async function verifyToken(req: Request, res: Response) {
       username: userFound.username,
       email: userFound.email,
       address: userFound.address,
+      cart: userFound.cart,
+      purchaseHistory: userFound.purchaseHistory,
     });
   } catch (error) {
     return res.status(401).json({ message: "Unauthorized: Invalid token" });

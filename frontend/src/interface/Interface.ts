@@ -1,3 +1,5 @@
+import type { ReactNode } from "react";
+
 export interface User {
   _id: string;
   email: string;
@@ -114,4 +116,8 @@ export interface UserUpdateRequestProps {
   email: string;
   cart: Product[];
   purchaseHistory: PurchaseHistory[];
+}
+
+export interface CartProviderProps {
+  children: ReactNode;
 }
