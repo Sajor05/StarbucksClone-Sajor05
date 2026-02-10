@@ -10,11 +10,11 @@ Este proyecto es una aplicación **Fullstack** clon de la página oficial de Sta
 
 ## 🚀 Características Principales
 
-* **Autenticación Robusta:** Registro e inicio de sesión de usuarios utilizando **JWT** y **Cookies** para una sesión segura y persistente.
-* **Seguridad:** Encriptación de contraseñas de extremo a extremo mediante **Bcrypt**.
-* **Cuentas Individuales:** Cada usuario tiene su propio perfil, lo que garantiza que el carrito y los datos sean privados.
-* **Carrito de Compras:** Sistema funcional para agregar productos, ajustar cantidades y calcular totales en tiempo real.
-* **Historial de Compras:** Sección dedicada para revisar todas las transacciones pasadas realizadas por la cuenta.
+* **Autenticación:** Registro e inicio de sesión de usuarios utilizando **JWT** y **Cookies**.
+* **Seguridad:** Encriptación de contraseñas mediante **Bcrypt**.
+* **Perfiles:** Cada usuario tiene su propio perfil, lo que garantiza que el carrito y los datos sean privados e individuales.
+* **Carrito:** Sistema funcional para agregar productos y eliminar productos, visualizando la cantidad de unidades y el precio final.
+* **Historial de Compras:** Sección dedicada para revisar todas las transacciones pasadas realizadas por la cuenta, incluye fecha de compra.
 * **Diseño Moderno:** Interfaz 100% adaptable y estilizada utilizando **Tailwind CSS**.
 
 ---
