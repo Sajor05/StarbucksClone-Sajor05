@@ -23,7 +23,6 @@ export async function getProducts(req: Request, res: Response) {
 -- C A T E G O R I E S --
 -----------------------*/
 
-//Getter
 export async function categoriesController(req: Request, res: Response) {
   try {
     const absolutePath = path.join(cwd(), "mocks", "categories.json");
