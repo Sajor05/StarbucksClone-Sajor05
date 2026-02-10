@@ -7,7 +7,9 @@ export function useCategories() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const res = await axios.get("http://localhost:4000/api/categories");
+        const res = await axios.get(
+          "https://starbucksclone-sajor05.onrender.com/api/categories",
+        );
         setCategories(res.data);
       } catch (error) {
         console.log(error);

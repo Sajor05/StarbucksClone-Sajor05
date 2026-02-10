@@ -10,7 +10,10 @@ const app = express();
 app.set("port", process.env.PORT || 4000);
 app.use(
   cors({
-    origin: ["http://localhost:5173"],
+    origin: [
+      "http://localhost:5173",
+      "https://starbucksclone-snowy.vercel.app/",
+    ],
     methods: ["GET", "POST", "PUT"],
     credentials: true,
   }),

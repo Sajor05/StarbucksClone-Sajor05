@@ -4,7 +4,7 @@ import type { UserUpdateRequestProps } from "../interface/Interface";
 
 const isProduction = import.meta.env.MODE === "production";
 const baseURL = isProduction
-  ? "https://mercadolibre-sajor05.onrender.com/api"
+  ? "https://starbucksclone-sajor05.onrender.com/api"
   : "http://localhost:4000/api";
 
 const instance = axios.create({
