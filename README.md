@@ -1,6 +1,10 @@
 # ☕ Starbucks Clone - Fullstack
 
-Este proyecto es una aplicación **Fullstack** de alta fidelidad que replica la experiencia de usuario de Starbucks, potenciada con un sistema completo de gestión de usuarios, carrito de compras y persistencia de datos.
+Este proyecto es una aplicación **Fullstack** clon de la página oficial de Starbucks. Algunos agregados adicionales implementados en este proyecto son:
+- Sistema de autenticación,
+- Carrito de compras,
+- Persistencia de datos,
+- Implementación de base de datos
 
 ---
 
