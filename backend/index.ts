@@ -11,7 +11,7 @@ app.use(
   cors({
     origin: [
       "http://localhost:5173",
-      "https://starbucksclone-snowy.vercel.app",
+      "https://starbucksclone-snowy.vercel.app/",
     ],
     methods: ["GET", "POST", "PUT"],
     credentials: true,
