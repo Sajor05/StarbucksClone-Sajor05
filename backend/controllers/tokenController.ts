@@ -7,7 +7,9 @@ import type { IPayload } from "../interface/interface.js";
 export async function verifyToken(req: Request, res: Response) {
   const { token } = req.cookies;
   if (!token) {
-    return res.status(401);
+    return res
+      .status(401)
+      .json({ message: "No hay token, autorización denegada" });
   }
 
   try {
