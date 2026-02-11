@@ -25,6 +25,10 @@ export const AuthProvider: React.FC<React.PropsWithChildren> = ({
   const [user, setUser] = useState<User | null>(null);
   const [isAuthenticated, setIsAuthenticated] = useState<boolean>(false);
   const [loading, setLoading] = useState<boolean>(true);
+  const isProduction = import.meta.env.MODE === "production";
+  //const baseURL = isProduction
+  //? "https://starbucksclone-sajor05.onrender.com/api/logout"
+  //: "http://localhost:4000/api/logout";
 
   const signup = async (user: User) => {
     try {
@@ -49,7 +53,7 @@ export const AuthProvider: React.FC<React.PropsWithChildren> = ({
   const logout = async () => {
     try {
       await axios.post(
-        "http://localhost:4000/api/logout",
+        "https://starbucksclone-sajor05.onrender.com/api/logout",
         {},
         { withCredentials: true },
       );

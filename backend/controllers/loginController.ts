@@ -6,6 +6,7 @@ import { createAccessToken } from "../middleware/jwt.js";
 export async function login(req: Request, res: Response) {
   const { email, password } = req.body;
   try {
+    const isProduction = process.env.NODE_ENV === "production";
     const userFound = await User.findOne({ email });
     if (!userFound)
       return res.status(400).json({ message: "Revisa los datos ingresados" });
@@ -18,8 +19,8 @@ export async function login(req: Request, res: Response) {
     const token = await createAccessToken({ id: userFound._id.toString() });
     res.cookie("token", token, {
       httpOnly: true,
-      secure: process.env.NODE_ENV === "production",
-      sameSite: "strict",
+      secure: isProduction ? true : false,
+      sameSite: isProduction ? "none" : "lax",
       maxAge: 24 * 60 * 60 * 1000,
     });
     res.json({
