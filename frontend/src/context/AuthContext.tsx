@@ -25,7 +25,7 @@ export const AuthProvider: React.FC<React.PropsWithChildren> = ({
   const [user, setUser] = useState<User | null>(null);
   const [isAuthenticated, setIsAuthenticated] = useState<boolean>(false);
   const [loading, setLoading] = useState<boolean>(true);
-  const isProduction = import.meta.env.MODE === "production";
+  //const isProduction = import.meta.env.MODE === "production";
   //const baseURL = isProduction
   //? "https://starbucksclone-sajor05.onrender.com/api/logout"
   //: "http://localhost:4000/api/logout";
