@@ -22,7 +22,7 @@ export async function getProducts(req: Request, res: Response) {
 
 export async function getCategories(req: Request, res: Response) {
   try {
-    const allCategories = await Categories.find();
+    const allCategories = (await Categories.find()).reverse();
     res.status(200).json(allCategories);
   } catch (error) {
     console.error(error);
