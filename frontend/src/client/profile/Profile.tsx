@@ -21,7 +21,7 @@ export function Profile() {
         <Navbar />
         <div className="flex justify-center items-center h-[50vh]">
           <span className="text-[25px] md:text-[29px] font-bold text-[#1e3932] text-center px-4">
-            Usuario no encontrado
+            Cargando...
           </span>
         </div>
         <Footer />
