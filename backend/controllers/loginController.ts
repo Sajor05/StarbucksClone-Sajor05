@@ -17,6 +17,10 @@ export async function login(req: Request, res: Response) {
         .json({ message: "Revisa la contraseña ingresada" });
     }
     const token = await createAccessToken({ id: userFound._id.toString() });
+    console.log("DEBUG COOKIE:", {
+      isProduction,
+      nodeEnv: process.env.NODE_ENV,
+    });
     res.cookie("token", token, {
       httpOnly: true,
       secure: isProduction ? true : false,
