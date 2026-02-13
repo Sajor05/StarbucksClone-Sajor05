@@ -5,14 +5,14 @@ export async function userController(req: Request, res: Response) {
   const { email, cart, purchaseHistory } = req.body;
   try {
     const updatedUser = await User.findOneAndUpdate(
-        {email},
-        {cart:cart, purchaseHistory:purchaseHistory},
-        {new:true}
+      { email },
+      { cart: cart, purchaseHistory: purchaseHistory },
+      { new: true },
     );
-    if (!updatedUser) return res.status(404).json({ message: "Usuario no encontrado" });
+    if (!updatedUser)
+      return res.status(404).json({ message: "Usuario no encontrado" });
     return res.json(updatedUser);
-  
-    } catch (error) {
-            return res.status(500).json({ message: "Error al actualizar los datos" });
+  } catch (error) {
+    return res.status(500).json({ message: "Error al actualizar los datos" });
   }
 }

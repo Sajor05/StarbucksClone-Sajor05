@@ -12,7 +12,16 @@ export async function getProducts(req: Request, res: Response) {
     res.status(200).json(allProducts);
   } catch (error) {
     console.error(error);
-    res.status(500).json({ error: "Error al obtener los productos" });
+    res.status(500).json({ message: "Error al obtener los productos" });
+  }
+}
+
+//Setter
+export async function setProduct(req: Request, res: Response) {
+  try {
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ message: "Error interno al envias el producto" });
   }
 }
 

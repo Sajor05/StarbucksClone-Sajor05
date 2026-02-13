@@ -49,6 +49,11 @@ export interface CartContextType {
   handleBuy: () => void;
 }
 
+export interface FooterProps {
+  title: string;
+  children: ReactNode;
+}
+
 export interface Product {
   title: string;
   image: string;

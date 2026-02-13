@@ -10,44 +10,44 @@ export const BlockCard = ({
   isReversed,
 }: BlockCardProps) => {
   return (
-    <div className="grid grid-cols-1 lg:grid-cols-2 w-350 h-102 text-center">
+    <div className="text-center grid grid-cols-1 lg:grid-cols-2 w-full h-auto lg:w-350 lg:h-102">
       <section
-        className={`homeContainer-image w-176 ${isReversed ? "order-last" : ""}`}
+        className={`w-full h-64 lg:h-full flex justify-center items-center lg:w-176 
+        ${isReversed ? "lg:order-last" : ""}`}
         style={isReversed ? { backgroundColor: `${backgroundcolor}` } : {}}
       >
-        <img src={image} alt={text} />
+        <img src={image} alt={text} className="w-full h-full object-cover" />
       </section>
+
       <section
-        className="homeContainer-text"
+        className="homeContainer-text w-full flex flex-col justify-center items-center"
         style={{ backgroundColor: `${backgroundcolor}` }}
       >
-        <div className="text-container w-108.25 h-38.75 m-30">
+        <div className="text-container w-full px-6 py-8 lg:px-0 lg:py-0 lg:w-108.25 lg:h-38.75 lg:m-30">
           <h1
-            className={"text-[48px] font-bold"}
+            className="text-3xl lg:text-[48px] font-bold"
             style={{ color: `${textcolor}` }}
           >
             {text}
           </h1>
-          {isReversed ? (
+
+          {isReversed && (
             <span
-              className={`mt-4 text-[19px] font-semibold`}
-              style={isReversed ? { color: `${textcolor}` } : {}}
+              className="block mt-4 text-lg lg:text-[19px] font-semibold"
+              style={{ color: `${textcolor}` }}
             >
               Revisa las oportunidades que tenemos para vos
             </span>
-          ) : (
-            ""
           )}
-          {isReversed ? (
+
+          {isReversed && (
             <Link
               to={"https://app.genoma.work/jobs/sbx-ar"}
-              className={`submit-button mt-4`}
-              style={isReversed ? { color: `${textcolor}` } : {}}
+              className="submit-button mt-6 inline-block"
+              style={{ color: `${textcolor}` }}
             >
               Postular acá
             </Link>
-          ) : (
-            ""
           )}
         </div>
       </section>

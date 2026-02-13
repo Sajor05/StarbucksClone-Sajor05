@@ -1,22 +1,54 @@
-import "./Footer.css";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import type { FooterProps } from "../../interface/Interface";
 
 export const Footer = () => {
   return (
-    <footer className="footer h-116 mt-10 flex justify-center">
-      <div className="footer-container">
-        <div className="footer-links-region">
-          <div className="footer-row-container flex flex-row gap-70">
-            <FooterLinks />
-            <div>
-              <a href="http://qr.afip.gob.ar/?qr=mXre0uzPRZp2FyKAW3LfRQ,,">
-                <img
-                  src="https://www.starbucks.com.ar/static/images/footer-argentina.jpg"
-                  alt="Data Fiscal"
-                  className="w-[64.98px] h-[88.92px]"
-                />
-              </a>
-            </div>
+    <footer className="footer mt-10 w-full border-t border-gray-200">
+      <div className="mx-auto max-w-7xl px-4 py-8 md:px-10">
+        <div className="flex flex-col md:flex-row md:justify-between md:gap-20">
+          <div className="flex flex-col md:flex-row md:gap-20 w-full">
+            <FooterSection title="Sobre nosotros">
+              <Link to="/seccion/nuestra-historia">Nuestra historia</Link>
+              <Link to="/">Nuestra misión</Link>
+              <Link to="/">Nuestra cultura inclusiva y valores</Link>
+              <Link to="/articulo/lets-talk-coffee">Nuestro café</Link>
+              <Link to="https://historias.starbucks.com/...">
+                Historias y novedades
+              </Link>
+              <Link to="https://app.genoma.work/jobs/sbx-ar">
+                Trabajá con nosotros
+              </Link>
+              <Link to="/">Comunicados oficiales</Link>
+            </FooterSection>
+
+            <FooterSection title="Impacto social">
+              <Link to="/">Planeta</Link>
+              <Link to="/">Personas</Link>
+            </FooterSection>
+
+            <FooterSection title="Atención al cliente">
+              <Link to="/articulo/contacto">Contacto</Link>
+              <Link to="/articulo/medios-de-pago">Medios de pago</Link>
+              <Link to="https://autogestion.produccion.gob.ar/...">
+                Defensa del consumidor
+              </Link>
+            </FooterSection>
+
+            <FooterSection title="Experiencia Starbucks">
+              <Link to="/seccion/experiencia-starbucks">Formas de comprar</Link>
+              <Link to="https://www.pedidosya.com.ar/...">Delivery</Link>
+            </FooterSection>
+          </div>
+
+          <div className="mt-8 md:mt-0">
+            <Link to="http://qr.afip.gob.ar/?qr=mXre0uzPRZp2FyKAW3LfRQ,,">
+              <img
+                src="https://www.starbucks.com.ar/static/images/footer-argentina.jpg"
+                alt="Data Fiscal"
+                className="w-[65px] h-auto"
+              />
+            </Link>
           </div>
         </div>
       </div>
@@ -24,104 +56,41 @@ export const Footer = () => {
   );
 };
 
-const FooterLinks = () => {
-  return (
-    <section className="flex flex-row text-justify gap-20">
-      <AboutUs />
-      <SocialImpact />
-      <Client />
-      <Experience />
-    </section>
-  );
-};
+const FooterSection = ({ title, children }: FooterProps) => {
+  const [isOpen, setIsOpen] = useState(false);
 
-const AboutUs = () => {
   return (
-    <div className="flex flex-col gap-9 font-semibold">
-      <header>Sobre nosotros</header>
-      <div className="flex flex-col gap-5 text-gray-400">
-        <Link to={"/seccion/nuestra-historia"}>
-          <span className="hover:text-black">Nuestra historia</span>
-        </Link>
-        <Link to={""}>
-          <span className="hover:text-black">Nuestra misión</span>
-        </Link>
-        <Link to={""}>
-          <span className="hover:text-black">
-            Nuestra cultura inclusiva<span className="block">y valores</span>
-          </span>
-        </Link>
-        <Link to={"/articulo/lets-talk-coffee"}>
-          <span className="hover:text-black">Nuestro café</span>
-        </Link>
-        <Link
-          to={
-            "https://historias.starbucks.com/stories/2018/escuchando-a-la-tierra-creando-el-centro-de-visitantes-starbucks-en-la-hacienda-alsacia/"
-          }
+    <div className="border-b border-gray-200 md:border-none py-4 md:py-0 w-full">
+      <button
+        onClick={() => setIsOpen(!isOpen)}
+        className="flex w-full items-center justify-between text-left font-semibold text-lg md:mb-6"
+      >
+        <span>{title}</span>
+        <svg
+          className={`h-5 w-5 transition-transform md:hidden ${isOpen ? "rotate-360" : "rotate-270"}`}
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
         >
-          <span className="hover:text-black">Historias y novedades</span>
-        </Link>
-        <Link to={"https://app.genoma.work/jobs/sbx-ar"}>
-          <span className="hover:text-black">Trabajá con nosotros</span>
-        </Link>
-        <Link to={""}>
-          <span className="hover:text-black">Comunicados oficiales</span>
-        </Link>
-      </div>
-    </div>
-  );
-};
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth="2"
+            d="M19 9l-7 7-7-7"
+          />
+        </svg>
+      </button>
 
-const SocialImpact = () => {
-  return (
-    <div className="flex flex-col gap-9 font-semibold">
-      <header>Impacto social</header>
-      <div className="flex flex-col gap-5 text-gray-400">
-        <Link to={""}>
-          <span className="hover:text-black">Planeta</span>
-        </Link>
-        <Link to={""}>
-          <span className="hover:text-black">Personas</span>
-        </Link>
-      </div>
-    </div>
-  );
-};
-
-const Client = () => {
-  return (
-    <div className="flex flex-col gap-9 font-semibold">
-      <header>Atención al cliente</header>
-      <div className="flex flex-col gap-5 text-gray-400">
-        <Link to={"/articulo/contacto"}>
-          <span className="hover:text-black">Contacto</span>
-        </Link>
-        <Link to={"/articulo/medios-de-pago"}>
-          <span className="hover:text-black">Medios de pago</span>
-        </Link>
-        <Link to={"https://autogestion.produccion.gob.ar/consumidores"}>
-          <span className="hover:text-black">
-            Defensa de las y los<span className="block">consumidores</span>
-          </span>
-        </Link>
-      </div>
-    </div>
-  );
-};
-
-const Experience = () => {
-  return (
-    <div className="flex flex-col gap-3 font-semibold">
-      <header>
-        Experiencia<span className="block">Starbucks</span>
-      </header>
-      <div className="flex flex-col gap-5 text-gray-400">
-        <Link to={"/seccion/experiencia-starbucks"}>
-          <span className="hover:text-black">Formas de comprar</span>
-        </Link>
-        <Link to={"https://www.pedidosya.com.ar/cadenas/starbucks"}>
-          <span className="hover:text-black">Delivery</span>
-        </Link>
+      <div
+        className={`
+        flex flex-col gap-4 mt-4 font-semibold text-gray-400
+        ${isOpen ? "block" : "hidden"} 
+        md:flex
+      `}
+      >
+        {React.Children.map(children, (child) => (
+          <span className="transition-colors hover:text-black">{child}</span>
+        ))}
       </div>
     </div>
   );

@@ -46,7 +46,7 @@ export function ProfileDropdown() {
         </svg>
       </button>
       {isOpen && (
-        <div className="absolute right-0 mt-2 w-48 bg-white font-semibold rounded-lg shadow-xl border border-gray-100 z-50 overflow-hidden">
+        <div className="absolute right-15 lg:right-0 mt-2 w-48 bg-white font-semibold rounded-lg shadow-xl border border-gray-100 z-50 overflow-hidden">
           <Link
             to={`/perfil/${user.username}`}
             className="block px-4 py-2 text-sm hover:bg-gray-100 transition-colors"
