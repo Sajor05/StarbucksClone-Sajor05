@@ -14,7 +14,7 @@ export function RegisterForm() {
   -- H O O K S --
   -------------*/
   const navigate = useNavigate();
-  const { signup, isAuthenticated } = useAuth();
+  const { signup, isAuthenticated, setErrors, errors } = useAuth();
   const [show, setShow] = useState<boolean>(false);
   const { register, handleSubmit, watch } = useForm<User>();
 
@@ -27,6 +27,7 @@ export function RegisterForm() {
   ---------------------*/
 
   const onSubmit = handleSubmit(async (values) => {
+    setErrors(null);
     signup(values);
   });
 
@@ -138,6 +139,11 @@ export function RegisterForm() {
               </span>
             </button>
           </div>
+          {errors && (
+            <div className="bg-red-100 border border-red-400 text-red-700 px-4 py-2 rounded text-sm text-center">
+              {errors}
+            </div>
+          )}
           <div className="text-center">
             <Link to={"/iniciar-sesion"}>
               ¿Ya tenes cuenta?{" "}

@@ -23,6 +23,7 @@ export const AuthProvider: React.FC<React.PropsWithChildren> = ({
   children,
 }) => {
   const [user, setUser] = useState<User | null>(null);
+  const [errors, setErrors] = useState<string | null>(null);
   const [isAuthenticated, setIsAuthenticated] = useState<boolean>(false);
   const [loading, setLoading] = useState<boolean>(true);
   //const isProduction = import.meta.env.MODE === "production";
@@ -36,7 +37,10 @@ export const AuthProvider: React.FC<React.PropsWithChildren> = ({
       setUser(res.data);
       setIsAuthenticated(true);
     } catch (error) {
-      console.log(error);
+      if (axios.isAxiosError(error)) {
+        console.log(error.response?.data?.message);
+        setErrors(error.response?.data?.message)
+      }
     }
   };
 
@@ -46,7 +50,10 @@ export const AuthProvider: React.FC<React.PropsWithChildren> = ({
       setUser(res.data);
       setIsAuthenticated(true);
     } catch (error) {
-      console.log(error);
+      if (axios.isAxiosError(error)) {
+        console.log(error.response?.data?.message);
+        setErrors(error.response?.data?.message)
+      }
     }
   };
 
@@ -106,6 +113,8 @@ export const AuthProvider: React.FC<React.PropsWithChildren> = ({
         signup,
         signin,
         logout,
+        errors,
+        setErrors,
         user,
         isAuthenticated,
         loading,

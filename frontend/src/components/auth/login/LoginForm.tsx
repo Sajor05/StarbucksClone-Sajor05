@@ -21,7 +21,7 @@ export function LoginForm() {
   const [show, setShow] = useState<boolean>(false);
 
   //useContext
-  const { signin, isAuthenticated } = useAuth();
+  const { signin, isAuthenticated, errors, setErrors } = useAuth();
 
   //useEffect
   useEffect(() => {
@@ -36,10 +36,8 @@ export function LoginForm() {
   const navigate = useNavigate();
 
   const onSubmit = handleSubmit(async (values: User) => {
+    setErrors(null);
     await signin(values);
-    if (isAuthenticated) {
-      navigate("/");
-    }
   });
 
   return (
@@ -119,7 +117,11 @@ export function LoginForm() {
               </span>
             </button>
           </div>
-
+          {errors && (
+            <div className="bg-red-100 border border-red-400 text-red-700 px-4 py-2 rounded text-sm text-center">
+              {errors}
+            </div>
+          )}
           <div className="text-center">
             <span className="font-light">¿Aún no tenes cuenta? </span>
             <Link to={"/registrarse"} className="text-blue-500 underline">

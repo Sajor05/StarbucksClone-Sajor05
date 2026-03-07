@@ -31,6 +31,8 @@ export interface AuthContextType {
   user: User | null;
   isAuthenticated: boolean;
   loading: boolean;
+  errors: String | null;
+  setErrors: React.Dispatch<React.SetStateAction<string | null>>;
   signup: (user: User) => Promise<void>;
   signin: (user: User) => Promise<void>;
   logout: () => void;
