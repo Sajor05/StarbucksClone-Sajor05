@@ -27,6 +27,10 @@ export function LoginForm() {
   useEffect(() => {
     if (isAuthenticated) navigate("/");
   }, [isAuthenticated]);
+  
+  setTimeout(() => {
+    setErrors(null);
+  } , 5000);
 
   /*-------------------------------------
   --  C O N S T  &&  F U N C T I O N S --

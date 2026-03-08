@@ -22,6 +22,10 @@ export function RegisterForm() {
     if (isAuthenticated) navigate("/");
   }, [isAuthenticated]);
 
+  setTimeout(() => {
+    setErrors(null);
+  } , 5000);
+
   /*---------------------
   -- F U N C T I O N S --
   ---------------------*/

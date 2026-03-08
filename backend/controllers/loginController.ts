@@ -5,16 +5,17 @@ import { createAccessToken } from "../middleware/jwt.js";
 
 export async function login(req: Request, res: Response) {
   const { email, password } = req.body;
+  const errormsg = "Revisa los datos ingresados";
   try {
     const isProduction = process.env.NODE_ENV === "production";
     const userFound = await User.findOne({ email });
     if (!userFound)
-      return res.status(400).json({ message: "Revisa los datos ingresados" });
+      return res.status(400).json({ message: errormsg });
     const matches = await bcrypt.compare(password, userFound.password);
     if (!matches) {
       return res
         .status(400)
-        .json({ message: "Revisa la contraseña ingresada" });
+        .json({ message: errormsg });
     }
     const token = await createAccessToken({ id: userFound._id.toString() });
     res.cookie("token", token, {
@@ -35,6 +36,6 @@ export async function login(req: Request, res: Response) {
     if (error instanceof Error) {
       return res.status(500).json({ message: error.message });
     }
-    return res.status(500).json({ message: "An unknown error occurred" });
+    return res.status(500).json({ message: "Error interno del servidor" });
   }
 }
