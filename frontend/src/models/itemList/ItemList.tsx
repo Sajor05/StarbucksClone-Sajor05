@@ -44,12 +44,6 @@ export function ItemList({ targetCategory }: ItemListProps) {
           <div className="section-title-container p-4">
             <span className="font-bold text-[18.6019px]">{s.sectionTitle}</span>
           </div>
-          {/* CAMBIOS RESPONSIVE:
-             - grid-cols-1 en móvil.
-             - md:grid-cols-2 en tablet.
-             - lg:grid-cols-3 en escritorio (original).
-             - gap-6 en móvil (más compacto), gap-10 (original) en escritorio.
-          */}
           <section className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-10">
             {products
               .filter((p) => p.section == s.section)
