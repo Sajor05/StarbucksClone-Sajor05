@@ -17,7 +17,6 @@ export function ItemList({ targetCategory }: ItemListProps) {
     );
   }
 
-  // VISTA 1: LISTA DE CATEGORÍAS (Cuando no hay targetCategory seleccionada)
   if (!targetCategory) {
     return (
       <div className="flex flex-col gap-10 px-4 md:px-0">
@@ -39,7 +38,7 @@ export function ItemList({ targetCategory }: ItemListProps) {
   }
 
   return (
-    <main className="flex flex-col px-4 md:px-20 lg:px-31">
+    <main className="flex flex-col px-4 md:px-20 lg:px-10">
       {targetCategory.sections.map((s, i) => (
         <div key={i} className="mb-10 lg:mb-25">
           <div className="section-title-container p-4">
