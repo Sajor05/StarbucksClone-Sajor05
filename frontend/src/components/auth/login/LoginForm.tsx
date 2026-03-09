@@ -8,6 +8,7 @@ import { FaRegEyeSlash } from "react-icons/fa";
 import { useForm } from "react-hook-form";
 import { useAuth } from "../../../context/AuthContext";
 import type { User } from "../../../interface/Interface";
+import { usePageTitle } from "../../../hooks/usePageTitle";
 
 export function LoginForm() {
   /*--------------
@@ -30,7 +31,9 @@ export function LoginForm() {
   
   setTimeout(() => {
     setErrors(null);
-  } , 5000);
+  } , 1000);
+
+  usePageTitle("Iniciar sesión | Starbucks");
 
   /*-------------------------------------
   --  C O N S T  &&  F U N C T I O N S --

@@ -8,6 +8,7 @@ import { useNavigate } from "react-router-dom";
 import { FaRegEyeSlash } from "react-icons/fa";
 import { useAuth } from "../../../context/AuthContext";
 import type { User } from "../../../interface/Interface";
+import { usePageTitle } from "../../../hooks/usePageTitle";
 
 export function RegisterForm() {
   /*-------------
@@ -21,10 +22,12 @@ export function RegisterForm() {
   useEffect(() => {
     if (isAuthenticated) navigate("/");
   }, [isAuthenticated]);
-
+ 
   setTimeout(() => {
     setErrors(null);
-  } , 5000);
+  } , 1000);
+
+  usePageTitle("Registrate | Starbucks");
 
   /*---------------------
   -- F U N C T I O N S --
