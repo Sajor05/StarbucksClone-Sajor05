@@ -12,9 +12,9 @@ export const Purchase = () => {
   };
 
   return (
-    <div className="p-5">
+    <div className="p-5 overflow-x-hidden">
       <PurchaseTitle />
-      <div className="flex flex-row gap-5 overflow-x-scroll lg:w-235 mt-5 pb-4 min:grid grid-cols-2">
+      <div className="flex flex-row gap-10 overflow-x-scroll lg:w-235 mt-5 pb-4 min:grid grid-cols-2">
         {purchaseHistory.length > 0 ? (
           purchaseHistory
             .slice()
@@ -33,7 +33,7 @@ export const Purchase = () => {
                 </div>
 
                 {/* Lista de Productos (Scrollable internamente) */}
-                <div className="flex-1 overflow-y-auto mb-2 pr-1">
+                <div className="flex-1 mb-2 pr-1">
                   <span className="text-sm font-semibold text-gray-600 block mb-1">
                     Resumen del pedido:
                   </span>
