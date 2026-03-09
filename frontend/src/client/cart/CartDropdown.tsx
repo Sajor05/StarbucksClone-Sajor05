@@ -36,13 +36,13 @@ export function CartModal() {
         <BsCart2 className="mt-0" size={20} />
       </button>
       {isOpen && (
-        <div className="absolute z-50 -right-10 lg:-right-10 mt-2 h-135 w-96 bg-white rounded-lg shadow-xl border border-gray-100 px-8 flex flex-col">
+        <div className="absolute z-50 -right-10 lg:-right-10 mt-2 h-130 w-96 bg-white rounded-lg shadow-xl border border-gray-100 px-8 flex flex-col">
           <header className="text-center py-3 shrink-0">
             <span className="text-[19px] font-semibold">Carrito</span>
             <hr className="text-gray-300 mt-2" />
           </header>
 
-          <div className="max-h-[450px] overflow-y-auto p-3">
+          <div className="max-h-[340px] overflow-y-auto p-3">
             <div className="flex flex-col gap-6">
               {cart.length > 0 ? (
                 cart.map((p, i) => (
