@@ -34,7 +34,7 @@ export function Profile() {
       <Navbar />
       <Title text={`¡Bienvenido otra vez ${user.username}!`} />
       <main className="w-full px-4 md:px-10 lg:px-20 xl:px-32 flex justify-center mb-10 overflow-hidden">
-        <div className="grid grid-cols-1 xl:grid-cols-[700px_370px] gap-5 p-0 md:p-5 mt-2 w-full max-w-[1400px]">
+        <div className="grid grid-cols-1 xl:grid-cols-[1000px_370px] gap-5 p-0 md:p-5 mt-2 w-full max-w-[1400px]">
           <div className="border h-auto border-gray-400 rounded-sm w-full">
             <div className="flex flex-col">
               <UserData user={user} />
@@ -42,7 +42,6 @@ export function Profile() {
             </div>
           </div>
 
-          {/* Columna Derecha (Carrito) - Se pone debajo en móvil, al lado en escritorio */}
           <div className="w-full">
             <Cart />
           </div>
@@ -69,7 +68,6 @@ const UserData = ({ user }: UserDataProps) => {
       {/* D A T A */}
       <div className="user-data flex flex-col gap-4 text-[16px] md:text-[19px]">
         {/* U S E R N A M E  D A T A */}
-        {/* Agregué break-all/break-words para que emails largos no rompan el celular */}
         <div className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-3 mt-6 sm:mt-8">
           <div className="flex flex-row items-center gap-1.5 min-w-fit">
             <PiUserListBold size={28} />

@@ -14,7 +14,7 @@ export const Purchase = () => {
   return (
     <div className="p-5 overflow-x-hidden">
       <PurchaseTitle />
-      <div className="flex flex-row gap-5 overflow-x-scroll w-auto mt-5 pb-4 min:grid grid-cols-2">
+      <div className="flex flex-row gap-5 overflow-x-auto w-auto mt-5 pb-4 min:grid grid-cols-2">
         {purchaseHistory.length > 0 ? (
           purchaseHistory
             .slice()
