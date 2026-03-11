@@ -44,18 +44,16 @@ const CategoryMenu = ({ title }: CategoryMenuProp) => {
 
   return (
     <>
-      <header>
-        <header className="py-7 px-4 md:px-12 lg:px-20 xl:px-10 max-w-[1400px] mx-auto">
-          <span className="text-[#00000094] text-sm md:text-base">
-            <Link to="/menu" className="hover:underline">
-              Menú
-            </Link>
-            <span className="font-bold"> / {title}</span>
-          </span>
-          <h1 className="text-[24px] md:text-[28.11px] font-bold mt-2">
-            {title}
-          </h1>
-        </header>
+      <header className="py-7 px-4 md:px-12 lg:px-20 xl:px-10 max-w-[1400px] mx-auto">
+        <span className="text-[#00000094] text-sm md:text-base">
+          <Link to="/menu" className="hover:underline">
+            Menú
+          </Link>
+          <span className="font-bold"> / {title}</span>
+        </span>
+        <h1 className="text-[24px] md:text-[28.11px] font-bold mt-2">
+          {title}
+        </h1>
       </header>
       <ItemList targetCategory={targetCategory} />
     </>

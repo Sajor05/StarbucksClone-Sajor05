@@ -38,7 +38,7 @@ export function ItemList({ targetCategory }: ItemListProps) {
   }
 
   return (
-    <main className="flex flex-col px-4 md:px-20 lg:px-10">
+    <main className="flex flex-col px-4 md:px-20 lg:px-10 xl:px-100">
       {targetCategory.sections.map((s, i) => (
         <div key={i} className="mb-10 lg:mb-25">
           <div className="section-title-container p-4">
