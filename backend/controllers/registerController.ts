@@ -7,7 +7,7 @@ export const register = async (req: Request, res: Response) => {
   const { email, address, username, password } = req.body;
   try {
     const userFound = await User.findOne({ email });
-    if (userFound) return res.status(400).json({ message: "Ya existe una cuenta con este e-mail" });
+    if (userFound) return res.status(400).json({ message: "Ya existe una cuenta con este correo" });
     if(!address || !username || !password || !email) return res.status(400).json({message: "Ingresa todos los datos"})
     if(password.length < 6) return res.status(400).json({message:"La contraseña debe contar con al menos 6 caracteres"})
 

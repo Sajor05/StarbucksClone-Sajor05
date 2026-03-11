@@ -12,7 +12,7 @@ export const Coffee = () => {
       <Navbar />
       <div>
         <Title text={"Nuestro café"} />
-        <main className="main-container flex flex-col gap-8 text-[20px] text-[#000000DE] min-sm:mx-25 font-light lg:mx-150">
+        <main className="main-container flex flex-col gap-8 text-[20px] text-[#000000DE] min-sm:mx-20 font-light lg:mx-85">
           <div className="our-coffee mt-10">
             <p>
               El olor al café, a unos granos recién tostados, es la mejor

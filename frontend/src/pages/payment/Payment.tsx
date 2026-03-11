@@ -7,7 +7,7 @@ export const Payment = () => {
     <>
       <Navbar />
       <Title text={"Medios de pago"} />
-      <div className="mt-5 px-155">
+      <div className="mt-10 px-35">
         <span className="text-[14px]">
           Medios de Pago aceptados: efectivo, tarjeta de crédito, tarjeta de
           débito y pago con QR.

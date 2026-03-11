@@ -12,7 +12,7 @@ export const OurHistory = () => {
         <Title text="Nuestra historia" />
       </div>
 
-      <main className="flex flex-col gap-20 text-center mt-15 text-[19px] font-semibold min-sm:mx-25 lg:mx-150">
+      <main className="flex flex-col gap-20 text-center mt-15 text-[19px] font-semibold min-sm:mx-20 lg:mx-85">
         <div className="flex justify-center">
           <img
             src="https://djftrby1k8irl.cloudfront.net/s3fs-public/2022-02%2FTienda%20Seattle_1.JPG?auto=format,compress&q=70&crop=focalpoint&ar=1.6:1.0&w=700&fit=max"

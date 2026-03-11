@@ -29,7 +29,6 @@ const CategoryMenu = ({ title }: CategoryMenuProp) => {
 
   if (categories.length === 0) {
     return (
-      // Agregué min-h-[50vh] para que el 'Cargando' quede centrado verticalmente en móvil
       <div className="flex justify-center items-center min-h-[50vh]">
         <span className="text-[25px] font-bold text-[#1e3932]">
           Cargando...
@@ -46,7 +45,7 @@ const CategoryMenu = ({ title }: CategoryMenuProp) => {
   return (
     <>
       <header>
-        <header className="py-7 px-4 md:px-12 lg:px-20 xl:px-32 max-w-[1400px] mx-auto">
+        <header className="py-7 px-4 md:px-12 lg:px-20 xl:px-10 max-w-[1400px] mx-auto">
           <span className="text-[#00000094] text-sm md:text-base">
             <Link to="/menu" className="hover:underline">
               Menú
@@ -66,12 +65,10 @@ const CategoryMenu = ({ title }: CategoryMenuProp) => {
 const MainMenu = () => {
   return (
     <>
-      {/* RESPONSIVE: Padding dinámico y contenedor centrado */}
-      <main className="px-4 md:px-12 lg:px-20 xl:px-32 max-w-[1400px] mx-auto mb-10">
+      <main className="px-4 md:px-12 lg:px-20 xl:px-10 max-w-[1400px] mx-auto mb-10">
         <header className="py-7 font-bold">
           <p className="text-sm md:text-base mb-1">¡Disfrútalos!</p>
 
-          {/* Título responsive: text-3xl en móvil, text-4xl en escritorio */}
           <h1 className="block text-3xl md:text-4xl leading-tight">
             Conoce nuestras bebidas y alimentos de
             <span className="block mt-1">temporada</span>

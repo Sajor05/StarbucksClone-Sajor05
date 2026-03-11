@@ -7,7 +7,7 @@ export const Contact = () => {
     <>
       <Navbar />
       <Title text={"Contacto"} />
-      <main className="flex flex-col gap-9 px-160 mt-5 text-[#000000DE] text-[20px] font-light">
+      <main className="flex flex-col gap-9 px-60 mt-5 text-[#000000DE] text-[20px] font-light overflow-hidden">
         <header>Contactamos por los siguientes canales:</header>
         <div>
           <span className="font-semibold">Por mail: </span>
