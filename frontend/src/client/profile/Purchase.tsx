@@ -22,7 +22,7 @@ export const Purchase = () => {
             .map((c, i) => (
               <div
                 key={i}
-                className="min-w-[300px] max-w-[300px] p-4 border border-gray-300 rounded-xl shadow-sm bg-white snap-center flex flex-col h-[350px]"
+                className="min-w-75 max-w-75 p-4 border border-gray-300 rounded-xl shadow-sm bg-white snap-center flex flex-col h-87.5"
               >
                 <div className="border-b pb-2 mb-2">
                   <p className="text-sm text-gray-500">Fecha de compra</p>
@@ -59,7 +59,7 @@ export const Purchase = () => {
               </div>
             ))
         ) : (
-          <div className="w-full text-center py-10 bg-gray-50 rounded-lg border border-dashed border-gray-300">
+          <div className="w-full h-full items-center flex justify-center">
             <span className="text-gray-400 font-light text-lg">
               Aún no has realizado ninguna compra.
             </span>
