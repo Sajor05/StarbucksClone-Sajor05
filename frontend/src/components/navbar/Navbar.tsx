@@ -26,7 +26,7 @@ export const Navbar = () => {
           <div className="hidden lg:flex items-center gap-6">
             <NavLink
               to={"/stores"}
-              className="font-semibold flex items-center hover:opacity-[.8] pointer-events-none"
+              className="font-semibold flex items-center hover:opacity-[.8]"
             >
               <FaMapMarkerAlt className="mr-2" size={18} />
               Localizar Tienda
