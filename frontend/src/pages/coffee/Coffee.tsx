@@ -12,49 +12,52 @@ export const Coffee = () => {
       <Navbar />
       <div>
         <Title text={"Nuestro café"} />
-        <main className="main-container flex flex-col gap-8 text-[20px] text-[#000000DE] min-sm:mx-20 font-light lg:mx-85">
+        <main className="main-container flex flex-col gap-8 text-[20px] text-[#000000DE] sm:mx-20 font-light lg:mx-115">
           <div className="our-coffee mt-10">
-            <p>
+            <p className="lg:mx-40">
               El olor al café, a unos granos recién tostados, es la mejor
               bienvenida que cada día planificamos para brindarles cuando
               abrimos las puertas de nuestras tiendas. Pero eso es sólo el
               comienzo.
             </p>
+            <div className="flex justify-center">
+              <img
+                src="https://djftrby1k8irl.cloudfront.net/s3fs-public/2022-03%2FNuestro%20Caf%C3%A9.png?auto=format,compress&q=70&crop=focalpoint&ar=1.6:1.0&w=700&fit=max"
+                alt="Café corazon"
+                className="my-8"
+              />
+            </div>
 
-            <img
-              src="https://djftrby1k8irl.cloudfront.net/s3fs-public/2022-03%2FNuestro%20Caf%C3%A9.png?auto=format,compress&q=70&crop=focalpoint&ar=1.6:1.0&w=700&fit=max"
-              alt="Café corazon"
-              className="my-8"
-            />
-
-            <p>
+            <p className="lg:mx-40">
               De cuerpo entero, un poco ahumado, con notas cítricas, con fuerte
               presencia de chocolate…el desafío que tenemos constantemente es
               que cada uno de nuestros clientes encuentre su mezcla favorita y a
               la vez, que explore nuestras amplias selecciones más
               singulares.{" "}
             </p>
-            <p>
+            <p className="lg:mx-40">
               Para alcanzarlo nos abastecemos de los mejores granos de café
               arábicos siguiendo siempre estrictos principios éticos.
             </p>
           </div>
           <div>
-            <h2 className="font-bold text-[30px] text-black mb-10">
+            <h2 className="font-bold text-[30px] text-black mb-10 lg:mx-40">
               Nuestro tostado Starbucks
             </h2>
-            <p>
+            <p className="lg:mx-40">
               Cada café que ofrecemos exige un perfil de tostado único para
               crear una taza con el máximo aroma, acidez, cuerpo y sabor. Al
               trabajar en un delicado balance en calor, tiempo y arte, nuestros
               maestros en el tostado hacen resaltar estas únicas características
               de cada grano de café.{" "}
             </p>
-            <img
-              src="https://djftrby1k8irl.cloudfront.net/s3fs-public/2022-03%2Fcurva.jpg?auto=format,compress&q=70&crop=focalpoint&ar=1.6:1.0&w=700&fit=max"
-              alt="Curva del café tostado"
-              className="my-8"
-            />
+            <div className="flex justify-center">
+              <img
+                src="https://djftrby1k8irl.cloudfront.net/s3fs-public/2022-03%2Fcurva.jpg?auto=format,compress&q=70&crop=focalpoint&ar=1.6:1.0&w=700&fit=max"
+                alt="Curva del café tostado"
+                className="my-8"
+              />
+            </div>
           </div>
           <ToastType
             type={"Rubio"}
@@ -74,7 +77,7 @@ export const Coffee = () => {
               "Los cafés con tostado oscuro presentan un cuerpo completo y sabores fuertes y robustos."
             }
           />
-          <div className="flex flex-col gap-5">
+          <div className="flex flex-col gap-5 lg:mx-40">
             <h2 className="font-bold text-[30px] text-black">
               Descubre los métodos de preparación en{" "}
               <span className="block">
@@ -90,12 +93,13 @@ export const Coffee = () => {
               tiene un efecto sorprendente en el sabor de cada taza y define su
               cuerpo.
             </p>
-
-            <img
-              src="https://djftrby1k8irl.cloudfront.net/s3fs-public/2022-03%2FMetodos.png?auto=format,compress&q=70&crop=focalpoint&ar=1.6:1.0&w=700&fit=max"
-              alt="Metodos de preparación Starbucks"
-              className="my-8"
-            />
+            <div className="flex justify-center">
+              <img
+                src="https://djftrby1k8irl.cloudfront.net/s3fs-public/2022-03%2FMetodos.png?auto=format,compress&q=70&crop=focalpoint&ar=1.6:1.0&w=700&fit=max"
+                alt="Metodos de preparación Starbucks"
+                className="my-8"
+              />
+            </div>
 
             <p>
               Es por eso que nuestros magníficos baristas se enfocan en crear
@@ -124,7 +128,7 @@ export const Coffee = () => {
 
 const ToastType = ({ type, text }: ToastTypeProp) => {
   return (
-    <div>
+    <div className="lg:mx-40">
       <h2 className="font-bold text-[23.364px] text-black mb-5">{type}</h2>
       <p>{text}</p>
     </div>
