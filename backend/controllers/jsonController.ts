@@ -32,7 +32,7 @@ export async function setProduct(req: Request, res: Response) {
 
 export async function getCategories(req: Request, res: Response) {
   try {
-    const allCategories = (await Categories.find()).reverse();
+    const allCategories = await Categories.find().sort({ order: 1 });
     res.status(200).json(allCategories);
   } catch (error) {
     console.error(error);

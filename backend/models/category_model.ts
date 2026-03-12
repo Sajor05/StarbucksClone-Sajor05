@@ -20,6 +20,7 @@ const subCategorySchema = new mongoose.Schema(
 const categorySchema = new mongoose.Schema(
   {
     section: { type: String, required: true },
+    order: { type: Number, default: 0 },
     categorias: [subCategorySchema],
   },
   {

@@ -8,8 +8,10 @@ import type {
   ProductDetailProp,
 } from "../../../interface/Interface";
 import { useAuth } from "../../../context/AuthContext";
+import { usePageTitle } from "../../../hooks/usePageTitle";
 
 export const ProductDetail = ({ item }: ProductDetailProp) => {
+  usePageTitle(`${item?.title} | Starbucks`);
   if (!item) {
     return <NoProduct />;
   }
