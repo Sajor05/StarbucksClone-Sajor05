@@ -56,6 +56,30 @@ export interface FooterProps {
   children: ReactNode;
 }
 
+export interface IHeaderStoreCardProps {
+  name: string;
+  address: string;
+}
+
+export interface IShopServiceProps {
+  delivery: boolean;
+}
+
+export interface IScheduleProps {
+  opening: number;
+  closure: number;
+}
+
+export interface IStore {
+  name: string;
+  address: string;
+  opening: number;
+  closure: number;
+  lat: number;
+  lng: number;
+  isDelivery: boolean;
+}
+
 export interface Product {
   title: string;
   image: string;

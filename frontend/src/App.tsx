@@ -13,6 +13,7 @@ import { RegisterForm } from "./components/auth/register/RegisterForm";
 import { ExperienceStarBucks } from "./pages/experience/ExperienceStarBucks";
 import { ProductDetailCard } from "./models/productDetailCard/ProductDetailCard";
 import { OurHistory } from "./pages/history/OurHistory";
+import { StoreLocator } from "./pages/store/StoreLocator";
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/menu" element={<MenuListContainer />} />
+          <Route path="/stores" element={<StoreLocator />} />
           <Route path="/seccion/nuestra-historia" element={<OurHistory />} />
           <Route path="/perfil/:username" element={<Profile />} />
           <Route path="/articulo/contacto" element={<Contact />} />

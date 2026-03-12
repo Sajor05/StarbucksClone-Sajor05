@@ -1,3 +1,4 @@
+import Stores from "../models/shop_model.js";
 import Product from "../models/product_model.js";
 import type { Request, Response } from "express";
 import Categories from "../models/category_model.js";
@@ -35,6 +36,20 @@ export async function getCategories(req: Request, res: Response) {
     res.status(200).json(allCategories);
   } catch (error) {
     console.error(error);
+    res.status(500).json({ error: "Error al obtener las categorias" });
+  }
+}
+
+/*-------------
+-- S H O P S --
+-------------*/
+
+export async function getStores(req: Request, res: Response) {
+  try {
+    const allShops = await Stores.find();
+    res.status(200).json(allShops);
+  } catch (error) {
+    console.log(error);
     res.status(500).json({ error: "Error al obtener las categorias" });
   }
 }
