@@ -1,5 +1,6 @@
 import { VscSettings } from "react-icons/vsc";
 import Map, { Marker } from "react-map-gl/mapbox";
+import { Link } from "react-router-dom";
 import { Navbar } from "../../components/navbar/Navbar";
 import { usePageTitle } from "../../hooks/usePageTitle";
 import { useLocations } from "../../hooks/useLocations";
@@ -10,7 +11,7 @@ export function StoreLocator() {
   return (
     <div className="flex flex-col h-screen">
       <Navbar />
-      <main className="flex-1 grid grid-cols-[770px_1fr] w-full overflow-hidden">
+      <main className="flex-1 flex flex-col-reverse lg:grid lg:grid-cols-[770px_1fr] w-full overflow-hidden">
         <MapList />
         <MapStores />
       </main>
@@ -58,12 +59,14 @@ const MapStores = () => {
         mapboxAccessToken={MAPBOX_TOKEN}
       >
         {storeLocations.map((store, k) => (
-          <Marker
-            key={k}
-            longitude={store.lng}
-            latitude={store.lat}
-            color="#00704A"
-          />
+          <Link to={"/"} className="cursor-pointer">
+            <Marker
+              key={k}
+              longitude={store.lng}
+              latitude={store.lat}
+              color="#00704A"
+            />
+          </Link>
         ))}
       </Map>
     </div>
