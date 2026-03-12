@@ -4,14 +4,12 @@ import { usePageTitle } from "../../hooks/usePageTitle";
 import { useLocations } from "../../hooks/useLocations";
 import { StoreCard } from "../../models/storeCard/StoreCard";
 
-const storeLocations = useLocations();
-
 export function StoreLocator() {
   usePageTitle("Tiendas | Starbucks");
   return (
     <div className="flex flex-col h-screen">
       <Navbar />
-      <main className="flex-1 grid grid-cols-[770px_1fr] w-full">
+      <main className="flex-1 grid grid-cols-[770px_1fr] w-full overflow-hidden">
         <MapList />
         <MapStores />
       </main>
@@ -20,8 +18,9 @@ export function StoreLocator() {
 }
 
 const MapList = () => {
+  const storeLocations = useLocations();
   return (
-    <div className="p-6 bg-white overflow-y-auto shadow-lg z-10">
+    <div className="p-6 bg-white shadow-lg flex flex-col h-full overflow-hidden">
       <div className="mb-6">
         <input
           type="text"
@@ -29,22 +28,25 @@ const MapList = () => {
           className="w-full border-b border-gray-300 pb-2 outline-none"
         />
       </div>
-      <h2 className="text-xl font-bold mb-4 text-gray-800">Sucursales</h2>
-      {storeLocations.map((shop, i) => (
-        <StoreCard {...shop} key={i} />
-      ))}
+      <div className="flex-1 overflow-y-auto pr-6">
+        {storeLocations.map((shop, i) => (
+          <StoreCard {...shop} key={i} />
+        ))}
+      </div>
     </div>
   );
 };
 
 const MapStores = () => {
   const MAPBOX_TOKEN = import.meta.env.VITE_MAPBOX_TOKEN;
+  const storeLocations = useLocations();
   return (
     <div className="w-full h-full relative">
       <Map
         initialViewState={{
           longitude: -58.3816,
           latitude: -34.6037,
+          zoom: 10,
         }}
         style={{ width: "100%", height: "100%" }}
         cursor="auto"

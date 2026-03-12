@@ -1,13 +1,13 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
-import type { IStore } from "../interface/Interface.ts";
+import type { IStore } from "../interface/Interface";
 
 export function useLocations() {
   const [locations, setLocations] = useState<IStore[]>([]);
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const res = await axios.get(
+        const res = await axios.get<IStore[]>(
           "https://starbucksclone-sajor05.onrender.com/api/stores",
         );
         setLocations(res.data);

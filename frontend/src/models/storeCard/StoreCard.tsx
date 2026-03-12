@@ -19,7 +19,7 @@ dayjs.extend(timezone);
 export const StoreCard = (store: IStore) => {
   return (
     <>
-      <hr className="text-gray-200 my-3" />
+      <hr className="text-gray-200 my-5" />
       <Link to={""}>
         <article>
           <HeaderStoreCard name={store.name} address={store.address} />
