@@ -122,7 +122,7 @@ const NavLinkPage = ({ mobile, onClick }: NavLinkPageProps) => {
 };
 
 const Logo = () => (
-  <NavLink to="/" className="shrink-0">
+  <NavLink to="/">
     <img
       src="https://www.starbucks.com.ar/static/images/logo.svg"
       alt="Starbucks logo"
