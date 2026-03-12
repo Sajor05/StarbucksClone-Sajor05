@@ -59,9 +59,8 @@ const MapStores = () => {
         mapboxAccessToken={MAPBOX_TOKEN}
       >
         {storeLocations.map((store, k) => (
-          <Link to={"/"} className="cursor-pointer">
+          <Link to={"/"} className="cursor-pointer" key={k}>
             <Marker
-              key={k}
               longitude={store.lng}
               latitude={store.lat}
               color="#00704A"
