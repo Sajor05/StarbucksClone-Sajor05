@@ -1,3 +1,4 @@
+import { VscSettings } from "react-icons/vsc";
 import Map, { Marker } from "react-map-gl/mapbox";
 import { Navbar } from "../../components/navbar/Navbar";
 import { usePageTitle } from "../../hooks/usePageTitle";
@@ -21,12 +22,15 @@ const MapList = () => {
   const storeLocations = useLocations();
   return (
     <div className="p-6 bg-white shadow-lg flex flex-col h-full overflow-hidden">
-      <div className="mb-6">
+      <div className="mb-6 flex items-center gap-8">
         <input
           type="text"
           placeholder="Buscar Tienda"
           className="w-full border-b border-gray-300 pb-2 outline-none"
         />
+        <a href="">
+          <VscSettings size={25} color="#00000094" className="mt-2" />
+        </a>
       </div>
       <div className="flex-1 overflow-y-auto pr-6">
         {storeLocations.map((shop, i) => (

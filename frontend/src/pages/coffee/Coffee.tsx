@@ -85,7 +85,7 @@ export const Coffee = () => {
               </span>
             </h2>
 
-            <p>
+            <p className="lg:mx-40">
               Desde el cultivo responsable hasta el tostado, cada detalle en la
               elaboración de manera artesanal es fundamental para poder
               disfrutar de una taza de café Starbucks. Y además de la esencia de

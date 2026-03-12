@@ -45,10 +45,10 @@ const HeaderStoreCard = ({ name, address }: IHeaderStoreCardProps) => {
 
 const ShopServices = ({ delivery }: IShopServiceProps) => {
   return (
-    <div>
-      <div className="flex justify-center">
-        <FaPersonChalkboard />
-        <span>Pickup</span>
+    <div className="flex flex-row">
+      <div className="w-11 h-11 flex flex-col justify-center text-[#00000094]">
+        <FaPersonChalkboard className="relative left-3.5" />
+        <span className="text-[13px]">Pickup</span>
       </div>
       {delivery ? <DeliveryService /> : ""}
     </div>
@@ -57,9 +57,9 @@ const ShopServices = ({ delivery }: IShopServiceProps) => {
 
 const DeliveryService = () => {
   return (
-    <div className="flex justify-center">
-      <LiaBicycleSolid />
-      <span>Delivery</span>
+    <div className="w-11 h-11 flex flex-col justify-center text-[#00000094]">
+      <LiaBicycleSolid className="relative left-3.5" />
+      <span className="text-[13px]">Delivery</span>
     </div>
   );
 };
