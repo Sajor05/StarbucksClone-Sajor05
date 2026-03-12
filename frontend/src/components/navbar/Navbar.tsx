@@ -26,7 +26,7 @@ export const Navbar = () => {
           <div className="hidden lg:flex items-center gap-6">
             <NavLink
               to={"/stores"}
-              className="font-semibold flex items-center hover:opacity-[.8]"
+              className="font-semibold flex items-center hover:opacity-[.8] pointer-events-none"
             >
               <FaMapMarkerAlt className="mr-2" size={18} />
               Localizar Tienda
@@ -66,7 +66,10 @@ export const Navbar = () => {
           <NavLinkPage mobile onClick={() => setIsOpen(false)} />
           <hr className="border-gray-100" />
           <div className="flex flex-col gap-4">
-            <NavLink to={""} className="font-semibold flex items-center py-2">
+            <NavLink
+              to={"/stores"}
+              className="font-semibold flex items-center py-2"
+            >
               <FaMapMarkerAlt className="mr-2" size={18} />
               <span>Localizar Tienda</span>
             </NavLink>
