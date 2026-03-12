@@ -42,7 +42,7 @@ export const ExperienceCard = ({
         <img
           src={image}
           alt={title}
-          className="w-full h-64 object-cover lg:w-150 lg:h-87.5"
+          className="w-full h-110 object-cover lg:w-150 lg:h-87.5"
         />
       </div>
     </div>

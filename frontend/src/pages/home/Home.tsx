@@ -6,7 +6,7 @@ export const Home = () => {
   return (
     <>
       <Navbar />
-      <main className="h-266 overflow-hidden">
+      <main className="lg:h-266 md:h-auto overflow-hidden">
         <div className="flex justify-center">
           <BlockCard
             image="https://djftrby1k8irl.cloudfront.net/s3fs-public/2026-01%2Fbanner%202%20(1).png?auto=format,compress&q=70&crop=focalpoint&ar=1.8:1.0&w=1400&fit=max"

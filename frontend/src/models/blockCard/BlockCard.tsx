@@ -12,11 +12,15 @@ export const BlockCard = ({
   return (
     <div className="text-center grid grid-cols-1 lg:grid-cols-2 w-full h-auto lg:w-350 lg:h-102">
       <section
-        className={`w-full h-64 lg:h-full flex justify-center items-center lg:w-176 
+        className={`w-full h-auto lg:h-full flex justify-center items-center lg:w-176 
         ${isReversed ? "lg:order-last" : ""}`}
         style={isReversed ? { backgroundColor: `${backgroundcolor}` } : {}}
       >
-        <img src={image} alt={text} className="w-full h-full object-cover" />
+        <img
+          src={image}
+          alt={text}
+          className="w-full h-70 md:w-205.5 md:h-150 lg:w-full lg:h-full object-cover"
+        />
       </section>
 
       <section
