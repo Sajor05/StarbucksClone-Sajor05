@@ -39,7 +39,7 @@ export const AuthProvider: React.FC<React.PropsWithChildren> = ({
     } catch (error) {
       if (axios.isAxiosError(error)) {
         console.log(error.response?.data?.message);
-        setErrors(error.response?.data?.message)
+        setErrors(error.response?.data?.message);
       }
     }
   };
@@ -52,7 +52,7 @@ export const AuthProvider: React.FC<React.PropsWithChildren> = ({
     } catch (error) {
       if (axios.isAxiosError(error)) {
         console.log(error.response?.data?.message);
-        setErrors(error.response?.data?.message)
+        setErrors(error.response?.data?.message);
       }
     }
   };
@@ -60,7 +60,7 @@ export const AuthProvider: React.FC<React.PropsWithChildren> = ({
   const logout = async () => {
     try {
       await axios.post(
-        "https://starbucksclone-sajor05.onrender.com/api/logout",
+        "https://starbucks-clone-backend.vercel.app/api/logout",
         {},
         { withCredentials: true },
       );
