@@ -8,7 +8,7 @@ export function useCategories() {
     const fetchData = async () => {
       try {
         const res = await axios.get(
-          "https://starbucksclone-sajor05.onrender.com/api/categories",
+          "https://starbucks-clone-backend.vercel.app/api/categories",
         );
         setCategories(res.data);
       } catch (error) {
