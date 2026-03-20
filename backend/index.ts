@@ -28,3 +28,5 @@ connection();
 app.listen(app.get("port"), () => {
   console.log(`Escuchando puerto ${app.get("port")}`);
 });
+
+export default app;
