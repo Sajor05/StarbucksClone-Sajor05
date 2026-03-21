@@ -17,5 +17,6 @@ export function useCategories() {
     };
     fetchData();
   }, []);
+
   return categories;
 }
