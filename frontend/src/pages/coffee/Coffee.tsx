@@ -14,7 +14,7 @@ export const Coffee = () => {
         <Title text={"Nuestro café"} />
         <main className="main-container flex flex-col gap-8 text-[20px] text-[#000000DE] sm:mx-20 font-light lg:mx-115">
           <div className="our-coffee mt-10">
-            <p className="lg:mx-40">
+            <p>
               El olor al café, a unos granos recién tostados, es la mejor
               bienvenida que cada día planificamos para brindarles cuando
               abrimos las puertas de nuestras tiendas. Pero eso es sólo el
@@ -28,23 +28,23 @@ export const Coffee = () => {
               />
             </div>
 
-            <p className="lg:mx-40">
+            <p>
               De cuerpo entero, un poco ahumado, con notas cítricas, con fuerte
               presencia de chocolate…el desafío que tenemos constantemente es
               que cada uno de nuestros clientes encuentre su mezcla favorita y a
               la vez, que explore nuestras amplias selecciones más
               singulares.{" "}
             </p>
-            <p className="lg:mx-40">
+            <p>
               Para alcanzarlo nos abastecemos de los mejores granos de café
               arábicos siguiendo siempre estrictos principios éticos.
             </p>
           </div>
           <div>
-            <h2 className="font-bold text-[30px] text-black mb-10 lg:mx-40">
+            <h2 className="font-bold text-[30px] text-black mb-10">
               Nuestro tostado Starbucks
             </h2>
-            <p className="lg:mx-40">
+            <p>
               Cada café que ofrecemos exige un perfil de tostado único para
               crear una taza con el máximo aroma, acidez, cuerpo y sabor. Al
               trabajar en un delicado balance en calor, tiempo y arte, nuestros
@@ -77,7 +77,7 @@ export const Coffee = () => {
               "Los cafés con tostado oscuro presentan un cuerpo completo y sabores fuertes y robustos."
             }
           />
-          <div className="flex flex-col gap-5 lg:mx-40">
+          <div className="flex flex-col gap-5">
             <h2 className="font-bold text-[30px] text-black">
               Descubre los métodos de preparación en{" "}
               <span className="block">
@@ -85,7 +85,7 @@ export const Coffee = () => {
               </span>
             </h2>
 
-            <p className="lg:mx-40">
+            <p>
               Desde el cultivo responsable hasta el tostado, cada detalle en la
               elaboración de manera artesanal es fundamental para poder
               disfrutar de una taza de café Starbucks. Y además de la esencia de
@@ -128,7 +128,7 @@ export const Coffee = () => {
 
 const ToastType = ({ type, text }: ToastTypeProp) => {
   return (
-    <div className="lg:mx-40">
+    <div>
       <h2 className="font-bold text-[23.364px] text-black mb-5">{type}</h2>
       <p>{text}</p>
     </div>
