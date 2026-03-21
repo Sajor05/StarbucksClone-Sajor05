@@ -46,7 +46,7 @@ export async function getCategories(req: Request, res: Response) {
 
 export async function getStores(req: Request, res: Response) {
   try {
-    const allShops = await Stores.find();
+    const allShops = await Stores.find({}).limit(5);
     res.status(200).json(allShops);
   } catch (error) {
     console.log(error);
