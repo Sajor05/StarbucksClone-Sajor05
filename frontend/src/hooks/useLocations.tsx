@@ -8,7 +8,7 @@ export function useLocations() {
     const fetchData = async () => {
       try {
         const res = await axios.get<IStore[]>(
-          "https://starbucks-clone-backend.vercel.app/api/stores",
+          "https://starbucksclone-sajor05-xi1f.onrender.com/api/stores",
         );
         setLocations(res.data);
       } catch (error) {

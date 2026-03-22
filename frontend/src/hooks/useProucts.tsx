@@ -8,7 +8,7 @@ export function useProducts() {
     const fetchData = async () => {
       try {
         const res = await axios.get<Product[]>(
-          "https://starbucks-clone-backend.vercel.app/api/products",
+          "https://starbucksclone-sajor05-xi1f.onrender.com/api/products",
         );
         setProducts(res.data);
       } catch (error) {
