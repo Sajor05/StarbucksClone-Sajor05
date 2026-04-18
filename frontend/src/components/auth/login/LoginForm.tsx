@@ -24,15 +24,6 @@ export function LoginForm() {
   //useContext
   const { signin, isAuthenticated, errors, setErrors } = useAuth();
 
-  //useEffect
-  useEffect(() => {
-    if (isAuthenticated) navigate("/");
-  }, [isAuthenticated]);
-  
-  setTimeout(() => {
-    setErrors(null);
-  } , 1000);
-
   usePageTitle("Iniciar sesión | Starbucks");
 
   /*-------------------------------------
@@ -41,11 +32,18 @@ export function LoginForm() {
 
   const passwordContent = watch("password");
   const navigate = useNavigate();
-
   const onSubmit = handleSubmit(async (values: User) => {
     setErrors(null);
     await signin(values);
   });
+
+  useEffect(() => {
+    if (isAuthenticated) navigate("/");
+  }, [isAuthenticated]);
+
+  setTimeout(() => {
+    setErrors(null);
+  }, 1000);
 
   return (
     <div>

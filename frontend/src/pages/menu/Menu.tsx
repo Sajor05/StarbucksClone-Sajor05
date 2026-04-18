@@ -44,7 +44,7 @@ const CategoryMenu = ({ title }: CategoryMenuProp) => {
 
   return (
     <>
-      <header className="py-7 px-4 md:px-12 lg:px-20 xl:px-10 max-w-[1400px] mx-auto">
+      <header className="py-7 px-4 md:px-12 lg:px-20 xl:px-10 max-w-350 mx-auto">
         <span className="text-[#00000094] text-sm md:text-base">
           <Link to="/menu" className="hover:underline">
             Menú
@@ -63,7 +63,7 @@ const CategoryMenu = ({ title }: CategoryMenuProp) => {
 const MainMenu = () => {
   return (
     <>
-      <main className="px-4 md:px-12 lg:px-20 xl:px-10 max-w-[1400px] mx-auto mb-10">
+      <main className="px-4 md:px-12 lg:px-20 xl:px-10 max-w-350 mx-auto mb-10">
         <header className="py-7 font-bold">
           <p className="text-sm md:text-base mb-1">¡Disfrútalos!</p>
 
